@@ -1,0 +1,6 @@
+error /^ERROR: /
+error /^FAILED: \(0/.* INCOMPLETE: \(0/.* ERRORS: \(0/ /
+warning /^existing with unstable/
+error /^Installation is determined to be FAILED /
+# add some your project specified error or warning regexp
+

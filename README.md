@@ -12,4 +12,5 @@ perl csxmlparse.pl jobResults-2012-11.xml >> csfinal.xml
 manually remove the internal <list> </list> from csfinal.xml
 #####################################################################
 
-
+jenkins-test-log.rules is used along with Jenkins Post-build Actions->Console output parsing
+(config "Select Parsing Rules" in Global config with this file)
