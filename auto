@@ -1,0 +1,13 @@
+use FindBin '$Bin';
+my $SCRIPTDIR = $Bin;
+my $tmpxml = "$$.xml";
+foreach my $input (@ARGV) #input format should be 2013-03 2014-11  
+{
+my $input = "jobResults-$input.xml";
+`cp -f /proj/wrat-ci-webdocs/jenkinsdata/global-build-stats/jobresults/$input .`;
+`perl $SCRIPTDIR/xmlparse.pl $input >> $tmpxml`;
+}
+#manually remove the internal <list> </list> from $$.xml
+`sed -i.bk '/<list> /d' $tmpxml`;
+
+`mv $tmpxml final.xml `;
